@@ -1,10 +1,13 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import {observer,inject} from 'mobx-react'
 
-function App() {
+function App(props) {
+  console.log(props)
   return (
     <div className="App">
+      <p>hellowworld</p>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -23,4 +26,4 @@ function App() {
   );
 }
 
-export default App;
+export default inject(stores=>stores) (observer(App));
